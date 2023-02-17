@@ -14,7 +14,6 @@ while true; do
   output=$(iw $interface station dump)
   freq_str=$(iwconfig $interface | grep "Frequency:" | awk '{print $2}' | sed 's/Frequency://g')
   channel_str=$(iw $interface info | grep "channel" | awk '{print $2}')
-
   station=$(echo "$output" | grep "Station" | awk '{print $2}')
   tx_bitrate=$(echo "$output" | grep "tx bitrate" | awk '{print $3}')
   rx_bitrate=$(echo "$output" | grep "rx bitrate" | awk '{print $3}')
