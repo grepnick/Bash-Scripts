@@ -2,6 +2,8 @@
 
 # A script to show wifi stats ifstat style on Linux.
 
+echo -e "\n\nWireless statistics (press CTRL+C to stop):\n\n"
+
 interface=$(ip route | awk '/^default/{print $5; exit}')
 
 if [ -z "$interface" ]; then
